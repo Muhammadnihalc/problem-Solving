@@ -1,0 +1,20 @@
+def int_to_rome(x):
+    numbers = [1,4,5,9,10,40,50,90,100,400,500]
+    roman = ['I','IV','V','IX', 'X','XL', 'L','XC', 'C','CD', 'D']
+    i = 10  
+    roman_numeral = ''
+    while x != 0:
+        if numbers[i] <= x:    
+            roman_numeral += roman[i] 
+            x = x - numbers[i]
+        else:
+            i -= 1 # i = i - 1
+    return roman_numeral 
+
+if __name__ == '__main__':
+    x = int(input())
+    if (x <1 or x > 500):
+        print("please enter the number between 0 and 500")
+    else:
+        result = int_to_rome(x)
+        print(result)
